@@ -1,25 +1,31 @@
 const express = require("express");
 const dbConnect = require("./db/index");
-const { PORT } = require('./config/index');
-const errorHandler = require('./middlewares/errorHandler');
-const cookieParser = require('cookie-parser');
+const { PORT } = require("./config/index");
+const errorHandler = require("./middlewares/errorHandler");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
-const router = require('./routes/index')
-
+const corsOption = {
+  credentials: true,
+  origin: "http://localhost:5173",
+};
 
 const app = express();
 
 app.use(cookieParser());
 
+app.use(cors(corsOption));
+
 app.use(express.json());
 
+const router = require("./routes/index");
 app.use(router);
 
 // const PORT = 5000;
 
 dbConnect();
 
-app.use('/storage', express.static('storage'));
+app.use("/storage", express.static("storage"));
 
 app.use(errorHandler);
 
@@ -31,8 +37,6 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`server/backend is listening on port: ${PORT}`);
 });
-
-
 
 // {
 //   "username": "haris khan",

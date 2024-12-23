@@ -1,0 +1,9 @@
+.loginWrapper {
+    /* height: calc(100vh - 200px); */
+}
+.loginHeader {
+    width: inherit;
+}
+.logInButton {
+    border-radius: 10px;
+}
