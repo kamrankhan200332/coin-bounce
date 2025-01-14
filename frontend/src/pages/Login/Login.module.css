@@ -1,9 +1,6 @@
-.loginWrapper {
-    /* height: calc(100vh - 200px); */
-}
 .loginHeader {
-    width: inherit;
+  width: inherit;
 }
-.logInButton {
-    border-radius: 10px;
+.logInButton:disabled {
+  /* background-color: #6e8dfc; */
 }

@@ -34,7 +34,7 @@ const Login = () => {
       navigate("/");
     } else if (response.code === "ERR_BAD_REQUEST") {
       // display error message
-      setError(response.response.data.errorMessage);
+      setError(response.response.data.message);
     }
   };
 
@@ -77,8 +77,14 @@ const Login = () => {
       />
 
       <button
-        className={`${styles.logInButton} bg-[#3861fb] text-white border-none outline-none w-[30%] py-[14px] px-[25px] cursor-pointer font-bold text-[20px] m-[10px] mt-[30px]`}
+        className={`${styles.logInButton} bg-[#3861fb] text-white border-none rounded-[10px] outline-none w-[30%] py-[14px] px-[25px] cursor-pointer font-bold text-[20px] m-[10px] mt-[30px] disabled:bg-[#6e8dfc]`}
         onClick={handleLogin}
+        disabled={
+          !values.username ||
+          !values.password ||
+          errors.username ||
+          errors.password 
+        }
       >
         Log In
       </button>
@@ -98,5 +104,3 @@ const Login = () => {
 
 export default Login;
 
-// install formik library
-// npm install formik

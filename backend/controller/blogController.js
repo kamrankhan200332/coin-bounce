@@ -16,9 +16,10 @@ const blogController = {
     // 4. return response
 
     // client side -> base64 encoded string -> decode -> store -> save photo's in db
+    console.log(req);
     const createBlogSchema = Joi.object({
       title: Joi.string().required(),
-      author: Joi.string().regex(mongodbIdPattern).required(),
+      author: Joi.string().required(),
       content: Joi.string().required(),
       photo: Joi.string().required(),
     });

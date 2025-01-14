@@ -10,22 +10,6 @@
     font-weight: bold;
 }
 
-.logInButton {
-    border-radius: 10px;
-    text-decoration: none;
-}
-
-.signUpButton {
-    border-radius: 10px;
-    text-decoration: none;
-}
-
-.singOutButton {
-    border-radius: 10px;
-}
-
 .separator {
-    height: 1px;
-    margin-top: 15px;
     background: linear-gradient(to right, transparent, #9ba3c2, transparent);
 }
